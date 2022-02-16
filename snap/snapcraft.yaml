@@ -31,7 +31,6 @@ parts:
   openchrom:
     plugin: dump
     source: https://products.lablicate.com/openchrom/1.4.x/openchrom-lablicate_linux.x86_64_1.4.x.tar.gz
-    source-checksum: "sha256/d72b271ef6eab7f61ed6d68b9db3677c862d9f319cdc549561379c31551ba906"
     override-build: |
       snapcraftctl build
       sed -i 's;@user.home/;@user.home/snap/openchrom/current/;' $SNAPCRAFT_PART_INSTALL/openchrom.ini
