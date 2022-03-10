@@ -27,6 +27,7 @@ apps:
       - network
       - network-bind
       - raw-usb
+      - removable-media
 
 parts:
   openchrom:
