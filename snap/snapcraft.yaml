@@ -18,7 +18,7 @@ apps:
     extensions: [gnome-3-38]
     command: bin/openchrom-wrapper
     environment:
-      GTK2_RC_FILES: $SNAP/usr/share/themes/Yaru/gtk-2.0/gtkrc
+      GTK2_RC_FILES: $SNAP/usr/share/themes/Numix/gtk-2.0/gtkrc
       GTK_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gtk-2.0
     plugs:
       - browser-support
@@ -46,5 +46,5 @@ parts:
   gtk-2:
     plugin: nil
     stage-packages:
-      - yaru-theme-gtk
+      - numix-gtk-theme
       - libgtk2.0-0
