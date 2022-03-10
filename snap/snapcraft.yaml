@@ -21,6 +21,7 @@ apps:
       GTK2_RC_FILES: $SNAP/usr/share/themes/Yaru/gtk-2.0/gtkrc
       GTK_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gtk-2.0
     plugs:
+      - browser-support
       - home
       - mount-observe
       - network
