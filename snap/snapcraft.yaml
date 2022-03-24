@@ -1,7 +1,7 @@
 name: openchrom
 base: core20
 
-version: '1.4.0.202203041443'
+version: '1.5.0'
 summary: Visualization and Analysis of mass spectrometric and chromatographic data.
 description:
   OpenChrom® is an Open Source tool for the analysis and visualization of
@@ -17,9 +17,6 @@ apps:
   openchrom:
     extensions: [gnome-3-38]
     command: bin/openchrom-wrapper
-    environment:
-      GTK2_RC_FILES: $SNAP/usr/share/themes/Numix/gtk-2.0/gtkrc
-      GTK_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gtk-2.0
     plugs:
       - browser-support
       - home
@@ -32,19 +29,15 @@ apps:
 parts:
   openchrom:
     plugin: dump
-    source: https://products.lablicate.com/openchrom/1.4.x/openchrom-lablicate_linux.x86_64_1.4.x.tar.gz
+    source: https://products.lablicate.com/openchrom/1.5.0/openchrom-lablicate_linux.x86_64_1.5.0.tar.gz
     override-build: |
       snapcraftctl build
       sed -i 's;@user.home/;@user.home/snap/openchrom/current/;' $SNAPCRAFT_PART_INSTALL/openchrom.ini
     stage-packages:
       - libusb-1.0-0
+      - libgtk-3-0
   wrappers:
     plugin: dump
     source: snap/local/wrappers
     organize:
       openchrom: bin/openchrom-wrapper
-  gtk-2:
-    plugin: nil
-    stage-packages:
-      - numix-gtk-theme
-      - libgtk2.0-0
