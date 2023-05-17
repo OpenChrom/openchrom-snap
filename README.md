@@ -1,6 +1,6 @@
 # OpenChrom Snap Package
 
-## Install
+## Install [![openchrom](https://snapcraft.io/openchrom/badge.svg)](https://snapcraft.io/openchrom)
 
     sudo snap install openchrom
 
