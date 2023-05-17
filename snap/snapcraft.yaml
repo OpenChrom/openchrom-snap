@@ -1,5 +1,5 @@
 name: openchrom
-base: core20
+base: core22
 
 version: '1.5.0.20230505'
 summary: Visualization and Analysis of mass spectrometric and chromatographic data.
@@ -15,7 +15,7 @@ architectures:
 
 apps:
   openchrom:
-    extensions: [gnome-3-38]
+    extensions: [gnome]
     command: bin/openchrom-wrapper
     plugs:
       - browser-support
