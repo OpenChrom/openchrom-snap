@@ -23,7 +23,6 @@ apps:
       - mount-observe
       - network
       - network-bind
-      - raw-usb
       - removable-media
 
 parts:
@@ -34,7 +33,6 @@ parts:
       snapcraftctl build
       sed -i 's;@user.home/;@user.home/snap/openchrom/current/;' $SNAPCRAFT_PART_INSTALL/openchrom.ini
     stage-packages:
-      - libusb-1.0-0
       - libgtk-3-0
   wrappers:
     plugin: dump
