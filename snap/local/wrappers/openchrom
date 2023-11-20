@@ -6,4 +6,5 @@ if [ -f "$SNAP_USER_DATA/openchrom.ini" ]; then
 else
     echo "To override openchrom.ini, copy the default file to '$SNAP_USER_DATA/openchrom.ini' and modify to suit."
 fi
+GDK_BACKEND=x11
 exec "$SNAP/openchrom" -configuration "${SNAP_USER_DATA}/${SNAP_ARCH}/configuration" "${EXTRA_ARGS[@]}" "$@"
