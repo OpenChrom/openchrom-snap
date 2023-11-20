@@ -24,6 +24,7 @@ apps:
       - network
       - network-bind
       - removable-media
+      - x11
 
 parts:
   openchrom:
