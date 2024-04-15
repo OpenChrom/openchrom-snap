@@ -33,13 +33,17 @@ parts:
     override-build: |
       snapcraftctl build
       sed -i 's;@user.home/;@user.home/snap/openchrom/current/;' $SNAPCRAFT_PART_INSTALL/openchrom.ini
-    build-packages:
-      - execstack
     stage-packages:
       - libgtk-3-0
+      - libusb-1.0-0
     override-prime: |
       craftctl default
-      execstack -c $SNAPCRAFT_PART_INSTALL/plugins/com.sun.jna_*/com/sun/jna/freebsd-*/libjnidispatch.so
+      rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/aix*/
+      rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/darwin*/
+      rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/freebsd*/
+      rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/openbsd*/
+      rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/sunos*/
+      rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/win32*/
   wrappers:
     plugin: dump
     source: snap/local/wrappers
