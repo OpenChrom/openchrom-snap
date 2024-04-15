@@ -37,6 +37,7 @@ parts:
       - execstack
     stage-packages:
       - libgtk-3-0
+      - libusb-1.0-0
     override-prime: |
       craftctl default
       execstack -c $SNAPCRAFT_PART_INSTALL/plugins/com.sun.jna_*/com/sun/jna/freebsd-*/libjnidispatch.so
