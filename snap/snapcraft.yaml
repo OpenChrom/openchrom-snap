@@ -12,6 +12,7 @@ confinement: strict
 
 architectures:
   - build-on: amd64
+  - build-on: arm64
 
 apps:
   openchrom:
@@ -29,7 +30,9 @@ apps:
 parts:
   openchrom:
     plugin: dump
-    source: https://products.lablicate.com/openchrom/1.5.0/openchrom-lablicate_linux.x86_64_1.5.0.tar.gz
+    source:
+      - on amd64: https://products.lablicate.com/openchrom/1.5.0/openchrom-lablicate_linux.x86_64_1.5.0.tar.gz
+      - on arm64: https://products.lablicate.com/openchrom/1.5.0/openchrom-lablicate_linux.aarch64_1.5.0.tar.gz
     override-build: |
       craftctl default
       sed -i 's;@user.home/;@user.home/snap/openchrom/current/;' $SNAPCRAFT_PART_INSTALL/openchrom.ini
