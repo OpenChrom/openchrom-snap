@@ -39,6 +39,7 @@ parts:
     stage-packages:
       - libgtk-3-0
       - libusb-1.0-0
+      - libwebkit2gtk-4.1-0
     override-prime: |
       craftctl default
       rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/aix*/
