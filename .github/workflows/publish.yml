@@ -18,7 +18,7 @@ jobs:
           - arm64
     steps:
     - uses: actions/checkout@v4
-    - uses: docker/setup-qemu-action@v1
+    - uses: docker/setup-qemu-action@v3
     - uses: diddlesnaps/snapcraft-multiarch-action@v1
       id: snapcraft
       with:
