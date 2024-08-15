@@ -53,3 +53,10 @@ parts:
     source: snap/local/wrappers
     organize:
       openchrom: bin/openchrom-wrapper
+
+lint:
+  ignore:
+    - library:
+      - plugins/**/*.so
+      - features/*/jre/*/lib/*.so
+      - usr/lib/**/*.so*
