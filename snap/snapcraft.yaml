@@ -1,45 +1,39 @@
 name: openchrom
 base: core22
-
-version: '1.5.0.20240906'
+version: 1.5.0.20240913
 summary: Visualization and Analysis of mass spectrometric and chromatographic data.
-description:
-  OpenChrom® is an Open Source tool for the analysis and visualization of
-  mass spectrometric and chromatographic data developed by Lablicate GmbH.
-
+description: OpenChrom® is an Open Source tool for the analysis and visualization of mass spectrometric and chromatographic data developed by Lablicate GmbH.
 grade: stable
 confinement: strict
-
 architectures:
-  - build-on: amd64
-  - build-on: arm64
-
+- build-on: amd64
+- build-on: arm64
 apps:
   openchrom:
-    extensions: [gnome]
+    extensions:
+    - gnome
     command: bin/openchrom-wrapper
     plugs:
-      - browser-support
-      - home
-      - mount-observe
-      - network
-      - network-bind
-      - removable-media
-      - x11
-
+    - browser-support
+    - home
+    - mount-observe
+    - network
+    - network-bind
+    - removable-media
+    - x11
 parts:
   openchrom:
     plugin: dump
     source:
-      - on amd64: https://products.lablicate.com/openchrom/1.5.0/openchrom-lablicate_linux.x86_64_1.5.0.tar.gz
-      - on arm64: https://products.lablicate.com/openchrom/1.5.0/openchrom-lablicate_linux.aarch64_1.5.0.tar.gz
+    - on amd64: https://products.lablicate.com/openchrom/1.5.0/openchrom-lablicate_linux.x86_64_1.5.0.tar.gz
+    - on arm64: https://products.lablicate.com/openchrom/1.5.0/openchrom-lablicate_linux.aarch64_1.5.0.tar.gz
     override-build: |
       craftctl default
       sed -i 's;@user.home/;@user.home/snap/openchrom/current/;' $SNAPCRAFT_PART_INSTALL/openchrom.ini
     stage-packages:
-      - libgtk-3-0
-      - libusb-1.0-0
-      - libwebkit2gtk-4.1-0
+    - libgtk-3-0
+    - libusb-1.0-0
+    - libwebkit2gtk-4.1-0
     override-prime: |
       craftctl default
       rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/aix*/
@@ -53,10 +47,9 @@ parts:
     source: snap/local/wrappers
     organize:
       openchrom: bin/openchrom-wrapper
-
 lint:
   ignore:
-    - library:
-      - plugins/**/*.so
-      - features/*/jre/*/lib/*.so
-      - usr/lib/**/*.so*
+  - library:
+    - plugins/**/*.so
+    - features/*/jre/*/lib/*.so
+    - usr/lib/**/*.so*
