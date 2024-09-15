@@ -8,6 +8,7 @@ confinement: strict
 architectures:
 - build-on: amd64
 - build-on: arm64
+
 apps:
   openchrom:
     extensions:
@@ -21,6 +22,9 @@ apps:
     - network-bind
     - removable-media
     - x11
+    - dot-config-swtchart
+    - dot-config-openchrom
+
 parts:
   openchrom:
     plugin: dump
@@ -47,6 +51,21 @@ parts:
     source: snap/local/wrappers
     organize:
       openchrom: bin/openchrom-wrapper
+
+plugs:
+  dot-config-swtchart:
+    interface: personal-files
+    read:
+    - $HOME/.eclipse/org.eclipse.swtchart.extensions/settings
+    write:
+    - $HOME/.eclipse/org.eclipse.swtchart.extensions/settings
+  dot-config-openchrom:
+    interface: personal-files
+    read:
+    - $HOME/.openchrom
+    write:
+    - $HOME/.openchrom
+
 lint:
   ignore:
   - library:
