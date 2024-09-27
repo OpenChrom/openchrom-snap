@@ -52,14 +52,10 @@ parts:
 plugs:
   dot-config-swtchart:
     interface: personal-files
-    read:
-    - $HOME/.eclipse/org.eclipse.swtchart.extensions
     write:
     - $HOME/.eclipse/org.eclipse.swtchart.extensions
   dot-config-openchrom:
     interface: personal-files
-    read:
-    - $HOME/.openchrom
     write:
     - $HOME/.openchrom
 lint:
