@@ -23,7 +23,6 @@ apps:
     - x11
     - dot-eclipse-org-eclipse-swtchart-extensions
     - dot-openchrom
-    - dot-wine-applications
 parts:
   openchrom:
     plugin: dump
@@ -59,10 +58,6 @@ plugs:
     interface: personal-files
     write:
     - $HOME/.openchrom
-  dot-wine-applications:
-    interface: personal-files
-    write:
-    - $HOME/.wine
 lint:
   ignore:
   - library:
