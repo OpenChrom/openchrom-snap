@@ -21,8 +21,8 @@ apps:
     - network-bind
     - removable-media
     - x11
-    - dot-config-swtchart
-    - dot-config-openchrom
+    - dot-eclipse-org-eclipse-swtchart-extensions
+    - dot-openchrom
     - dot-wine-applications
 parts:
   openchrom:
@@ -51,11 +51,11 @@ parts:
     organize:
       openchrom: bin/openchrom-wrapper
 plugs:
-  dot-config-swtchart:
+  dot-eclipse-org-eclipse-swtchart-extensions:
     interface: personal-files
     write:
     - $HOME/.eclipse/org.eclipse.swtchart.extensions
-  dot-config-openchrom:
+  dot-openchrom:
     interface: personal-files
     write:
     - $HOME/.openchrom
