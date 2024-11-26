@@ -6,6 +6,11 @@
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
+
+To store [Lablicate account](https://account.lablicate.com/) in the system keyring run
+
+    snap connect openchrom:password-manager-service
+
 ## Development
 
     snapcraft
