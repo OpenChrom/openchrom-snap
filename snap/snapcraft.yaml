@@ -16,6 +16,7 @@ apps:
     plugs:
     - browser-support
     - home
+    - password-manager-service
     - mount-observe
     - network
     - network-bind
@@ -36,6 +37,7 @@ parts:
     - libgtk-3-0
     - libusb-1.0-0
     - libwebkit2gtk-4.1-0
+    - libsecret-1-0
     override-prime: |
       craftctl default
       rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/aix*/
