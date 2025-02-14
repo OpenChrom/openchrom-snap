@@ -1,6 +1,7 @@
 # OpenChrom Snap Package
 
 ## Install [![openchrom](https://snapcraft.io/openchrom/badge.svg)](https://snapcraft.io/openchrom)
+A pre-built package is available from the Snap store via
 
     sudo snap install openchrom
 
@@ -12,6 +13,7 @@ To store [Lablicate account](https://account.lablicate.com/) in the system keyri
     snap connect openchrom:password-manager-service
 
 ## Development
+For building a package locally run
 
     snapcraft
     sudo snap install openchrom*.snap --dangerous
