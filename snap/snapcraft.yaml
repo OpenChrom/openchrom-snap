@@ -1,13 +1,13 @@
 name: openchrom
 base: core24
-version: 1.5.0.20250214
+version: 1.5.0.20250221
 summary: Visualization and Analysis of mass spectrometric and chromatographic data.
 description: OpenChrom® is an Open Source tool for the analysis and visualization of mass spectrometric and chromatographic data developed by Lablicate GmbH.
 grade: stable
 confinement: strict
 platforms:
-  amd64:
-  arm64:
+  amd64: null
+  arm64: null
 apps:
   openchrom:
     extensions:
