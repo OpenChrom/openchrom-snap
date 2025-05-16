@@ -6,8 +6,8 @@ description: OpenChrom® is an Open Source tool for the analysis and visualizati
 grade: stable
 confinement: strict
 platforms:
-  amd64: null
-  arm64: null
+  amd64: ~
+  arm64: ~
 apps:
   openchrom:
     extensions:
