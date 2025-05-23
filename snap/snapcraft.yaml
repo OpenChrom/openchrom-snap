@@ -1,13 +1,13 @@
 name: openchrom
 base: core24
-version: 1.5.10
+version: 1.5.11
 summary: Visualization and Analysis of mass spectrometric and chromatographic data.
 description: OpenChrom® is an Open Source tool for the analysis and visualization of mass spectrometric and chromatographic data developed by Lablicate GmbH.
 grade: stable
 confinement: strict
 platforms:
-  amd64: ~
-  arm64: ~
+  amd64: null
+  arm64: null
 apps:
   openchrom:
     extensions:
@@ -28,8 +28,8 @@ parts:
   openchrom:
     plugin: dump
     source:
-    - on amd64: "https://products.lablicate.com/openchrom/${SNAPCRAFT_PROJECT_VERSION}/openchrom-lablicate_linux.x86_64_${SNAPCRAFT_PROJECT_VERSION}.tar.gz"
-    - on arm64: "https://products.lablicate.com/openchrom/${SNAPCRAFT_PROJECT_VERSION}/openchrom-lablicate_linux.aarch64_${SNAPCRAFT_PROJECT_VERSION}.tar.gz"
+    - on amd64: https://products.lablicate.com/openchrom/${SNAPCRAFT_PROJECT_VERSION}/openchrom-lablicate_linux.x86_64_${SNAPCRAFT_PROJECT_VERSION}.tar.gz
+    - on arm64: https://products.lablicate.com/openchrom/${SNAPCRAFT_PROJECT_VERSION}/openchrom-lablicate_linux.aarch64_${SNAPCRAFT_PROJECT_VERSION}.tar.gz
     override-build: |
       craftctl default
       sed -i 's;@user.home/;@user.home/snap/openchrom/current/;' $SNAPCRAFT_PART_INSTALL/openchrom.ini
