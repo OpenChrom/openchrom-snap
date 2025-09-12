@@ -28,8 +28,8 @@ parts:
   openchrom:
     plugin: dump
     source:
-    - on amd64: https://products.lablicate.com/openchrom/${SNAPCRAFT_PROJECT_VERSION}/openchrom-lablicate_linux.x86_64_${SNAPCRAFT_PROJECT_VERSION}.tar.gz
-    - on arm64: https://products.lablicate.com/openchrom/${SNAPCRAFT_PROJECT_VERSION}/openchrom-lablicate_linux.aarch64_${SNAPCRAFT_PROJECT_VERSION}.tar.gz
+    - on amd64: https://products.lablicate.com/openchrom/${SNAPCRAFT_PROJECT_VERSION}/openchrom_linux.x86_64_${SNAPCRAFT_PROJECT_VERSION}.tar.gz
+    - on arm64: https://products.lablicate.com/openchrom/${SNAPCRAFT_PROJECT_VERSION}/openchrom_linux.aarch64_${SNAPCRAFT_PROJECT_VERSION}.tar.gz
     override-build: |
       craftctl default
       sed -i 's;@user.home/;@user.home/snap/openchrom/current/;' $SNAPCRAFT_PART_INSTALL/openchrom.ini
