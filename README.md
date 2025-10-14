@@ -15,5 +15,5 @@ To store [Lablicate account](https://account.lablicate.com/) in the system keyri
 ## Development
 For building a package locally run
 
-    snapcraft
+    snapcraft pack
     sudo snap install openchrom*.snap --dangerous
