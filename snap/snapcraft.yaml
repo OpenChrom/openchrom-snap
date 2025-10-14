@@ -35,6 +35,7 @@ apps:
     - network-bind
     - removable-media
     - x11
+    - wayland
     - dot-eclipse-org-eclipse-swtchart-extensions
     - dot-openchrom
 parts:
