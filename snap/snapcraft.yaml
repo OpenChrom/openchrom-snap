@@ -1,6 +1,6 @@
 name: openchrom
 base: core24
-version: 1.6.18
+version: 1.6.19
 title: OpenChrom
 license: EPL-2.0
 summary: Visualization and Analysis of mass spectrometric and chromatographic data.
