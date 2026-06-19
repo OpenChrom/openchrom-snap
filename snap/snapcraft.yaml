@@ -52,7 +52,6 @@ parts:
     - libgtk-3-0
     - libusb-1.0-0
     - libsecret-1-0
-    - librsvg2-common
     override-prime: |
       craftctl default
       rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/aix*/
