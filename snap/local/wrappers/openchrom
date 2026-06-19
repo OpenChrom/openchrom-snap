@@ -1,10 +1,11 @@
-#!/bin/bash
-EXTRA_ARGS=()
-if [ -f "$SNAP_USER_DATA/openchrom.ini" ]; then
-    # Allow the user to override the openchrom.ini with their own version
-    EXTRA_ARGS+=("--launcher.ini" "$SNAP_USER_DATA/openchrom.ini")
-else
-    echo "To override openchrom.ini, copy the default file to '$SNAP_USER_DATA/openchrom.ini' and modify to suit."
-fi
+export OPENCHROM_HOME="$SNAP_USER_COMMON/openchrom"
+export ECLIPSE_HOME="$SNAP_USER_COMMON/eclipse"
 
-exec "$SNAP/openchrom" -configuration "${SNAP_USER_DATA}/${SNAP_ARCH}/configuration" "${EXTRA_ARGS[@]}" "$@"
+mkdir -p "$OPENCHROM_HOME" "$ECLIPSE_HOME"
+
+exec "$SNAP/openchrom" \
+  -configuration "$ECLIPSE_HOME/configuration" \
+  -data "$OPENCHROM_HOME/workspace" \
+  -vmargs \
+  -Duser.home="$SNAP_USER_COMMON" \
+  "$@"
