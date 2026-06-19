@@ -51,7 +51,6 @@ parts:
     stage-packages:
     - libgtk-3-0
     - libusb-1.0-0
-    - libwebkit2gtk-4.1-0
     - libsecret-1-0
     - librsvg2-common
     override-prime: |
