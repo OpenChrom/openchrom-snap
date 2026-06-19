@@ -33,6 +33,7 @@ apps:
     - mount-observe
     - network
     - network-bind
+    - network-status
     - removable-media
     - x11
     - wayland
