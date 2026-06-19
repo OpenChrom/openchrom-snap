@@ -1,11 +1,6 @@
-export OPENCHROM_HOME="$SNAP_USER_COMMON/openchrom"
-export ECLIPSE_HOME="$SNAP_USER_COMMON/eclipse"
-
-mkdir -p "$OPENCHROM_HOME" "$ECLIPSE_HOME"
-
 exec "$SNAP/openchrom" \
-  -configuration "$ECLIPSE_HOME/configuration" \
-  -data "$OPENCHROM_HOME/workspace" \
+  -configuration "$SNAP_USER_COMMON/eclipse/configuration" \
+  -data "$SNAP_USER_COMMON/openchrom/workspace" \
   -vmargs \
   -Duser.home="$SNAP_USER_COMMON" \
   "$@"
