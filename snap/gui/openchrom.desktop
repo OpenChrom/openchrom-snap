@@ -8,4 +8,4 @@ Exec=openchrom %f
 Comment=Visualization and Analysis of Chromatography, Spectrometry and Spectroscopy Data
 Categories=Science;Chemistry;
 Terminal=false
-StartupWMClass=OpenChrom (Hillenkamp)
+StartupWMClass=OpenChrom
