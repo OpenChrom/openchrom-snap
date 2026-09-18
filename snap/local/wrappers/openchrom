@@ -1,6 +1,6 @@
 exec "$SNAP/openchrom" \
   -configuration "$SNAP_USER_COMMON/eclipse/configuration" \
   -data "$SNAP_USER_COMMON/openchrom/workspace" \
+  "$@" \
   -vmargs \
-  -Duser.home="$SNAP_USER_COMMON" \
-  "$@"
+  -Duser.home="$SNAP_USER_COMMON"
