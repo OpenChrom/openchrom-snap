@@ -1,3 +1,4 @@
+#!/bin/bash
 exec "$SNAP/openchrom" \
   --launcher.appendVmargs \
   -configuration "$SNAP_USER_COMMON/eclipse/configuration" \
