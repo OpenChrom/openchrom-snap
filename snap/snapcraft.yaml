@@ -39,6 +39,11 @@ apps:
     - wayland
     - dot-eclipse-org-eclipse-swtchart-extensions
     - dot-openchrom
+layout:
+  /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libgio-2.0.so:
+    symlink: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libgio-2.0.so.0
+  /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libsecret-1.so:
+    symlink: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libsecret-1.so.0
 parts:
   openchrom:
     plugin: dump
