@@ -1,5 +1,5 @@
 name: openchrom
-base: core24
+base: core26
 version: 1.6.42
 title: OpenChrom
 license: EPL-2.0
@@ -50,9 +50,7 @@ parts:
       sed -i 's;@user.home/;@user.home/snap/openchrom/current/;' $SNAPCRAFT_PART_INSTALL/openchrom.ini
       sed -i 's;-Dopenchrom.update=true;-Dopenchrom.update=false;' $SNAPCRAFT_PART_INSTALL/openchrom.ini
     stage-packages:
-    - libgtk-3-0
     - libusb-1.0-0
-    - libsecret-1-0
     override-prime: |
       craftctl default
       rm -r $SNAPCRAFT_PRIME/plugins/com.sun.jna_*v*/com/sun/jna/aix*/
